@@ -3,8 +3,8 @@
 import { Button } from '@/components/ui/button';
 import { ShoppingCart, MessageCircle } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
-import FlyingImage from '@/components/animations/FlyingImage';
 import { useRef, useState } from 'react';
+import { useNotification } from '@/components/context/NotificationContext';
 
 interface Product {
   id: number;
@@ -21,13 +21,13 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart();
+  const { showNotification } = useNotification(); // ✅ Tambah ini
   const [flyImages, setFlyImages] = useState<{ id: number; from: DOMRect; to: DOMRect; image: string }[]>([]);
   const imageRef = useRef<HTMLImageElement>(null);
-  const [showNotif, setShowNotif] = useState(false);
 
   const handleWhatsAppOrder = () => {
     const message = `Halo admin Lofty Florist! 🌸\n\nSaya tertarik dengan produk *${product.name}* seharga *Rp.${product.price.toLocaleString()}*. Apakah buket ini masih tersedia?\n\nKalau tersedia, saya ingin tahu detail pengirimannya. Terima kasih! 🙏😊`;
-    const whatsappUrl = `https://wa.me/6285840469673?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/6208987169353?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -40,8 +40,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     }
 
     addToCart(product);
-    setShowNotif(true);
-    setTimeout(() => setShowNotif(false), 2000);
+    showNotification('Produk telah ditambahkan ke keranjang!');
   };
 
   return (
@@ -56,12 +55,6 @@ export default function ProductCard({ product }: ProductCardProps) {
         {product.originalPrice && (
           <div className="absolute top-4 left-4 bg-[#DC2525] text-white px-3 py-1 rounded-full text-sm font-bold">
             Promo
-          </div>
-        )}
-
-        {showNotif && (
-          <div className="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded shadow-lg z-20 transition-opacity duration-500 ease-in-out">
-            Produk ditambahkan ke keranjang
           </div>
         )}
       </div>
@@ -98,15 +91,6 @@ export default function ProductCard({ product }: ProductCardProps) {
           </Button>
         </div>
       </div>
-
-      {flyImages.map((fly) => (
-        <FlyingImage
-          key={fly.id}
-          from={fly.from}
-          to={fly.to}
-          image={fly.image}
-        />
-      ))}
     </div>
   );
 }
