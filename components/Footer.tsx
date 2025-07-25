@@ -78,11 +78,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-300 text-sm mb-4 md:mb-0">
-            © 2025 Lofty Florist. All rights reserved.
-          </p>
-        </div>
+        <div className="border-t border-gray-800 mt-8 pt-8 flex justify-center items-center">
+        <p className="text-gray-300 text-sm text-center">
+          © 2025 Lofty Florist. All rights reserved.
+        </p>
+      </div>
       </div>
     </footer>
   );
