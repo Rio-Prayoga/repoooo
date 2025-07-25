@@ -181,7 +181,7 @@ export default function CheckoutPage() {
         </div>
         <button
           onClick={handleSubmit}
-          className="bg-green-600 hover:bg-green-700 text-white w-full py-3 rounded-lg mt-4 transition"
+          className="bg-[#7F1D1D] hover:bg-green-700 text-white w-full py-3 rounded-lg mt-4 transition"
         >
           Kirim via WhatsApp
         </button>
