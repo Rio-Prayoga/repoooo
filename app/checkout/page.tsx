@@ -121,7 +121,7 @@ export default function CheckoutPage() {
 
             <input
               name="telpPenerima"
-              placeholder="No HP Penerima *"
+              placeholder="No WA Penerima *"
               value={form.telpPenerima}
               onChange={handleChange}
               disabled={sameAsSender}
