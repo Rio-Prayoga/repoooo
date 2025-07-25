@@ -82,11 +82,6 @@ export default function Footer() {
           <p className="text-gray-300 text-sm mb-4 md:mb-0">
             © 2025 Lofty Florist. All rights reserved.
           </p>
-          <p className="text-gray-300 text-sm flex items-center">
-            Made with 
-            <span className="mx-1 text-red-500 text-base leading-none">❤️</span> 
-            by Rio Prayoga
-          </p>
         </div>
       </div>
     </footer>
