@@ -2,7 +2,7 @@ export default function AboutSection() {
   return (
     <section className="pt-8 pb-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center text-[#1E293B] mb-6">
+        <h2 className="text-base sm:text-lg md:text-2xl font-semibold text-center text-[#1E293B] mb-2">
           Tentang Kami
         </h2>
 
