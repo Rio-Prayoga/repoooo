@@ -5,6 +5,7 @@ import { ShoppingCart, MessageCircle } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { useRef, useState } from 'react';
 import { useNotification } from '@/components/context/NotificationContext';
+import { useRouter } from 'next/navigation'; // ✅ Tambahkan ini
 
 interface Product {
   id: number;
@@ -21,14 +22,13 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart();
-  const { showNotification } = useNotification(); // ✅ Tambah ini
+  const { showNotification } = useNotification();
   const [flyImages, setFlyImages] = useState<{ id: number; from: DOMRect; to: DOMRect; image: string }[]>([]);
   const imageRef = useRef<HTMLImageElement>(null);
+  const router = useRouter(); // ✅ Inisialisasi router
 
-  const handleWhatsAppOrder = () => {
-    const message = `Halo admin Lofty Florist! 🌸\n\nSaya tertarik dengan produk *${product.name}* seharga *Rp.${product.price.toLocaleString()}*. Apakah buket ini masih tersedia?\n\nKalau tersedia, saya ingin tahu detail pengirimannya. Terima kasih! 🙏😊`;
-    const whatsappUrl = `https://wa.me/6208987169353?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+  const handleRedirectToCheckout = () => {
+    router.push('/checkout'); // ✅ Arahkan ke form checkout
   };
 
   const handleAddToCart = () => {
@@ -75,7 +75,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         <div className="flex space-x-2">
           <Button
-            onClick={handleWhatsAppOrder}
+            onClick={handleRedirectToCheckout} // ✅ Ganti handler
             className="flex-1 text-xs px-2 py-1 sm:text-sm sm:px-4 sm:py-2 bg-[#7F1D1D] hover:bg-[#511D43] text-white transition-colors flex items-center justify-center gap-2"
           >
             <MessageCircle className="w-4 h-4" />
