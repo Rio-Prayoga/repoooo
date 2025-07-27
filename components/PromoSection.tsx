@@ -29,11 +29,12 @@ export default function PromoSection() {
   };
 
   return (
-    <section className="pt-4 pb-8 bg-white relative overflow-hidden">
+    <section className="pt-1 pb-8 bg-white relative overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-[#1E293B] mb-8">
+        <h2 className="text-base sm:text-lg md:text-2xl font-bold text-center text-[#1E293B] mb-2">
           Sedang Promo
         </h2>
+
 
         {/* Scrollable carousel */}
         <div
