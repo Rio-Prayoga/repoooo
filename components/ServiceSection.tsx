@@ -20,16 +20,16 @@ const services = [
 
 export default function ServiceSection() {
   return (
-    <section className="py-12 bg-[#3C5675] text-white">
+    <section className="pt-4 py-12 bg-[#3C5675] text-white">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-2">
+        <h2 className="text-base sm:text-lg md:text-2xl font-bold mb-2">
           Melayani 24 Jam, Cepat,
         </h2>
-        <p className="text-lg mb-6 text-white">
+        <p className="text-lg mb-2 text-white">
           Pengiriman wilayah Jakarta dan Indramayu.
         </p>
 
-        <p className="text-white mb-10 max-w-3xl mx-auto leading-relaxed text-base">
+        <p className="text-white mb-6 max-w-3xl mx-auto leading-relaxed text-base">
           Kami dengan senang hati menyajikan pemesanan terbaik menggunakan bunga, snack, dan lainnya. 
           Terkenal dengan pelayanan istimewa kami yang selalu siap memenuhi kebutuhan Anda dengan kualitas terbaik. 
           Kami juga memberikan diskon spesial bagi pelanggan setia dan anggota baru. 
