@@ -29,7 +29,7 @@ const specialProducts = [
 
 export default function SpecialProductsSection() {
   return (
-    <section className="py-12 bg-[#3C5675] text-[#ffffff]">
+    <section className="pt-4 py-12 bg-[#3C5675] text-[#ffffff]">
       <div className="max-w-[1280px] mx-auto px-4">
         <h2 className="text-base sm:text-lg md:text-2xl font-bold text-center mb-6">
           Produk Spesial
