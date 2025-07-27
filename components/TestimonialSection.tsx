@@ -7,7 +7,7 @@ export default function TestimonialSection() {
   return (
     <section className="pt-6 pb-12 bg-gray-50">
       <div className="max-w-[1280px] mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-[#1E293B] mb-6">
+        <h2 className="text-base sm:text-lg md:text-2xl font-bold text-center text-[#1E293B] mb-6">
           Testimoni Pelanggan Kami
         </h2>
 
